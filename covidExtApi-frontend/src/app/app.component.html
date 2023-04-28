@@ -1,0 +1,18 @@
+<div class="main-section">
+
+  <div class="buttons-section" y>
+    <input (keyup)="filterEnteredCountries($event)" id="countryNameBar" placeholder="Country"
+           type="text">
+    <div *ngFor="let country of displayedCountries | paginate:{
+      itemsPerPage : 10,
+      currentPage: 0,
+      totalItems : displayedCountries.length}" class="button-section">
+      <button
+        class="full-width-button"
+        id="{{country.slug}}">
+        {{country.name}}
+      </button>
+    </div>
+  </div>
+
+</div>
