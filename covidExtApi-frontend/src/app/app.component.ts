@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Country} from "./entity/country";
-import {CountryService} from "./countryService";
+import {Country} from "./entity/Country";
+import {CountryService} from "./service/CountryService";
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
 
   countries: Country[] = []
   displayedCountries: Country[] = []
+  selectedCountry: string = ""
 
   constructor(private service: CountryService) {
   }
@@ -32,6 +33,10 @@ export class AppComponent implements OnInit {
       this.displayedCountries = this.countries.filter(country =>
         country.name.toLowerCase().startsWith(filterText.toLowerCase()))
     }
+  }
+
+  selectCountry(event: Event) {
+    this.selectedCountry = (event.target as HTMLButtonElement).id + "";
   }
 
 }

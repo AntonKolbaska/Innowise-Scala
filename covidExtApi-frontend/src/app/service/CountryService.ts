@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Country} from "./entity/country";
+import {Country} from "../entity/Country";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -11,7 +11,6 @@ export class CountryService {
   }
 
   getAllCountries() {
-    // console.log(this.client.get<Country[]>('http://localhost:8080/covidextendedapi/countries'));
     return this.client.get<Country[]>('http://localhost:8080/covidextendedapi/countries')
   }
 

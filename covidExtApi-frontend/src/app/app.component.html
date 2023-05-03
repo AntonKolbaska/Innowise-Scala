@@ -8,11 +8,12 @@
       currentPage: 0,
       totalItems : displayedCountries.length}" class="button-section">
       <button
+        (click)="selectCountry($event)"
         class="full-width-button"
         id="{{country.slug}}">
         {{country.name}}
       </button>
     </div>
   </div>
-
+  <app-data [countryName]="selectedCountry"></app-data>
 </div>
