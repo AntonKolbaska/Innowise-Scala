@@ -12,6 +12,6 @@ export class DataService {
   }
 
   getCountry(startDate: string, endDate: string, countryName: string) {
-    return this.client.get<CountryData[]>(`${environment.apiUrl}/country/${countryName}?from=${startDate}&to=${endDate}`)
+    return this.client.get<CountryData>(`${environment.apiUrl}/country/${countryName}?from=${startDate}&to=${endDate}`)
   }
 }

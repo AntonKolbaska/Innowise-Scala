@@ -1,16 +1,16 @@
 export class CountryData {
-  country: string;
-  minCases: number;
-  dateMin: string;
-  maxCases: number;
-  dateMax: string;
+  country: String;
+  minCases: Number;
+  minCasesDate: String;
+  maxCases: Number;
+  maxCasesDate: String;
 
 
   constructor(country: string, minCases: number, dateMin: string, maxCases: number, dateMax: string) {
     this.country = country
     this.minCases = minCases
-    this.dateMin = dateMin
+    this.minCasesDate = dateMin
     this.maxCases = maxCases
-    this.dateMax = dateMax
+    this.maxCasesDate = dateMax
   }
 }
